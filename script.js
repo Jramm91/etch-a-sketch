@@ -1,13 +1,24 @@
-const container = document.getElementById("container");
+function populateBoard(size) {
+    let board = document.querySelector('.board');
+    let squares = board.querySelectorAll('div');
+    squares.forEach((div) => div.remove());
+    board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-function makeGrid(rows, cols) {
-    container.style.setProperty('--grid-rows', rows);
-    container.style.setProperty('--grid-cols', cols);
-    for (c = 0; c < (rows * cols); c++) {
-        let cell = document.createElement("div");
-        cell.innerText = (c + 1);
-        container.appendChild(cell).className = "grid-item";
-    };
-};
+    let amount = size * size;
+    for(let i = 0; i<amount; i++) {
+        let square = document.createElement('div');
+        square.style.backgroundColor = 'blue';
+        board.insertAdjacentElement('beforeend', square);
+    }
+}
 
-makeGrid(16, 16);
+populateBoard(16);
+
+function changeSize(input) {
+    if(input >=2 || input <=100) {
+        populateBoard(input);
+    } else {
+        console.log("too many squares");
+    }
+}

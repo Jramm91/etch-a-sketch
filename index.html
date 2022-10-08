@@ -6,18 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
+
 </head>
 <body>
-    <h1>Etch-a-Sketch</h1>
-
-    <div id="button-container">
-        <button id="resetBtn">Reset</button>
+    <div class="flex-container">
+        <div class="title"><h1>Etch-a-Sketch</h1></div>
+        <div class="content">
+            <div class="board"></div>
+            <div class="buttons">
+                <button>Black</button>
+                <button>White</button>
+                <button>Random</button>
+                <button>Reset</button>
+            </div>
+            <div>
+                <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)"/>
+                <button>Set Size</button>
+            </div>
+        </div>
     </div>
-    <div id="container">
-        
-    </div>
-    <script type="text/javascript" src="script.js"></script>
-
 </body>
+<script src="script.js"></script>
 </html>
