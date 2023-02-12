@@ -1,5 +1,32 @@
-.board {
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem;    
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 350px;
+    justify-content: space-around;
+    margin: 30px
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 500px;
+    align: center;
+    margin: 25px;
+}
+
+.board{
     width: 500px;
     height: 500px;
     display: grid;
+    border: 3px solid black;
 }
